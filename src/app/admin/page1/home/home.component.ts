@@ -37,6 +37,8 @@ export class HomeComponent implements OnInit {
   */
 
   search(name){
+    this.datasources=[];
+    this.users=[];
     this.searchAoi.searchService(name).subscribe(
       data => {debugger
 let row={name:data.name,login:data.login,company:data.company,type:data.type,bio:data.bio,location:data.location};
