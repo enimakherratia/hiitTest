@@ -1,0 +1,40 @@
+
+<div class="mb20" fxLayout="row" fxLayoutGap="20px">
+
+<mat-card [fxFlex]="50" >
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+              <div>
+      <mat-label>URL</mat-label>
+      <input matInput placeholder="URL"  [(ngModel)]="url" name="url">
+          </div>
+    </mat-form-field>
+
+    <button mat-button matSuffix mat-stroked-button aria-label="check_circle" (click)="transform(url)">
+         <mat-icon class="color1">check_circle</mat-icon>
+     </button>
+  </form>
+
+</mat-card>
+
+
+
+
+<mat-card  [fxFlex]="45" >
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+        <div>
+      <mat-label>l'URL réduit</mat-label>
+      <input matInput placeholder="l'URL réduit"  [(ngModel)]="urlreduit" name="urlreduit" readonly>
+          </div>
+    </mat-form-field>
+
+    <button mat-button matSuffix mat-stroked-button aria-label="check_circle" (click)="copyMessage(urlreduit)">
+         <mat-icon class="color1">file_copy</mat-icon>
+     </button>
+  </form>
+
+
+</mat-card>
+</div>

@@ -1,0 +1,66 @@
+
+<div class="mb20" fxLayout="row" fxLayoutGap="20px">
+  <mat-card  [fxFlex]="60">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <div>
+        <mat-label>Search by name</mat-label>
+        <input matInput placeholder="Username"  [(ngModel)]="name" name="username">
+        </div>
+      </mat-form-field>
+      <button mat-button matSuffix mat-stroked-button aria-label="search" (click)="search(name)">
+           <mat-icon class="color1">search</mat-icon>
+       </button>
+
+
+
+    </form>
+  </mat-card>
+
+  <mat-card [fxFlex]="40" style="    text-align: center;">
+  <button mat-raised-button color="accent" (click)="gotoPage2()">Go to Page2</button>
+  </mat-card>
+</div>
+
+<table mat-table #table [dataSource]="datasources" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name. </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="login">
+    <th mat-header-cell *matHeaderCellDef> Login </th>
+    <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="company">
+    <th mat-header-cell *matHeaderCellDef> Company </th>
+    <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="bio">
+    <th mat-header-cell *matHeaderCellDef> Bio </th>
+    <td mat-cell *matCellDef="let element"> {{element.bio}} </td>
+  </ng-container>
+  <ng-container matColumnDef="location">
+    <th mat-header-cell *matHeaderCellDef> Location </th>
+    <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
